@@ -12,4 +12,9 @@ public class GojoOverPowerUp : PowerUpsScriptable
     {
         target.GetComponentInChildren<SpriteRenderer>().sprite = GojoSkin;
     }
+
+    public override void SpecialPower(GameObject target)
+    {
+        
+    }
 }

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<GameObject> powerUps;
+    [SerializeField] private float delayStartTime;
+    [SerializeField] private float intervalTime;
 
     // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        InvokeRepeating("SpawnPowerUp", delayStartTime, intervalTime);
+    }
+
+    private void SpawnPowerUp()
+    {
+        int random = Random.Range(0, powerUps.Count);
+        Instantiate(powerUps[random]);
     }
 }
