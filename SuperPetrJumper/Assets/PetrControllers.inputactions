@@ -1,0 +1,67 @@
+{
+    "name": "PetrControllers",
+    "maps": [
+        {
+            "name": "Petr",
+            "id": "b254a143-91a0-4a4c-b333-ff7297a94467",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "7a756589-eac7-404b-abf9-79a1ee2b3a66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "84e8e247-ff19-426e-abbf-2040bc0365cf",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70d83b74-2063-4877-b535-f8c0ba7502cb",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddba030b-6f9f-427f-ae97-831778f44d23",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02942b37-a704-4c47-a5fd-e9eaa34b625c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
