@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e830bb3a110e54ba1b44ac4123a5619e, type: 3}
   m_Name: TestingPowerUpGojo
   m_EditorClassIdentifier: 
-  GojoSkin: {fileID: 0}
+  GojoSkin: {fileID: 3286163911610860551, guid: 29f877ba2000f4b17a190dbd6a55bb32, type: 3}
