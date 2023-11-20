@@ -10914,3 +10914,142 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1885.649757 seconds.
+  path: Assets/Scripts/PlayerPetr/PetrManager.cs
+  artifactKey: Guid(e247ac59177234ec3960d5bc0772ff92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerPetr/PetrManager.cs using Guid(e247ac59177234ec3960d5bc0772ff92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edff1b6ee627a6eb02139dc89dd526a7') in 0.006398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 439.328888 seconds.
+  path: Assets/Scripts/PowerUps/GojoOverPowerUp.cs
+  artifactKey: Guid(e830bb3a110e54ba1b44ac4123a5619e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/GojoOverPowerUp.cs using Guid(e830bb3a110e54ba1b44ac4123a5619e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bfa0f2cd1e13fde035f65a6c57a0573') in 0.000371 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 41.035372 seconds.
+  path: Assets/Scripts/PowerUps/GojoPowerUpObject.cs
+  artifactKey: Guid(e29e9403c04cf46dc98319f44f6fccfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/GojoPowerUpObject.cs using Guid(e29e9403c04cf46dc98319f44f6fccfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3539da0d60293c823387bdcdb0bc0001') in 0.000657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 100.166616 seconds.
+  path: Assets/Scripts/PowerUps/PowerUpsScriptable.cs
+  artifactKey: Guid(dad5fb3b79d664b9aa5eb35aee43a896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/PowerUpsScriptable.cs using Guid(dad5fb3b79d664b9aa5eb35aee43a896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88da56877cc62a43e5e031783fb62633') in 0.001022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 669.327089 seconds.
+  path: Assets/Scripts/PowerUps/SonicPowerUp.cs
+  artifactKey: Guid(bca9e8c7b3717413db90fe630450084a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/SonicPowerUp.cs using Guid(bca9e8c7b3717413db90fe630450084a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ae7850aaf4555ade84078d6cfd0defc') in 0.000688 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 46.112687 seconds.
+  path: Assets/Scripts/PowerUps/SonicPowerUpObject.cs
+  artifactKey: Guid(d3c50afe2764c4b9a8a51bc46f17d85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/SonicPowerUpObject.cs using Guid(d3c50afe2764c4b9a8a51bc46f17d85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08c79b5cc160e2a1b14200155f50ca2c') in 0.000626 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 49.917245 seconds.
+  path: Assets/Scripts/PowerUps/SpidermanPowerUp.cs
+  artifactKey: Guid(907e94dd40dcf4ecba2a719def6df61d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/SpidermanPowerUp.cs using Guid(907e94dd40dcf4ecba2a719def6df61d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '621fdb5211d74baba50832b550312244') in 0.000766 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 177.014173 seconds.
+  path: Assets/Scripts/PowerUps/SpiderwebController.cs
+  artifactKey: Guid(cd4bde40fff48467b9d711cf3c8010a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/SpiderwebController.cs using Guid(cd4bde40fff48467b9d711cf3c8010a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8a3f8487cb4001fff7fd1b54b6f2c43') in 0.000663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x16d907000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.342 seconds
+Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.904 seconds
+Domain Reload Profiling: 1246ms
+	BeginReloadAssembly (118ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (180ms)
+		LoadAssemblies (196ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (10ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (905ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (404ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (312ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4430 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 42 unused Assets / (179.2 KB). Loaded Objects now: 5407.
+Memory consumption went from 1.46 GB to 1.46 GB.
+Total: 3.078125 ms (FindLiveObjects: 0.151291 ms CreateObjectMapping: 0.059959 ms MarkObjects: 2.717958 ms  DeleteObjects: 0.148375 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 133.879718 seconds.
+  path: Assets/Scripts/PowerUps/SpiderwebController.cs
+  artifactKey: Guid(cd4bde40fff48467b9d711cf3c8010a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PowerUps/SpiderwebController.cs using Guid(cd4bde40fff48467b9d711cf3c8010a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '675f5c5ca79e2b11a56328633643b0ce') in 0.001157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0

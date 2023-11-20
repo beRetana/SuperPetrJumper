@@ -17,6 +17,7 @@ public class SonicPowerUp : PowerUpsScriptable
         }
     }
 
+    //Turns on the Somic Power-up effects.
     public override void ActivatePower(GameObject target)
     {
         PetrManager cp = target.gameObject.GetComponent<PetrManager>();
