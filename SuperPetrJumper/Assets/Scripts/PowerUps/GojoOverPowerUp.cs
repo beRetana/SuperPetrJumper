@@ -14,9 +14,9 @@ public class GojoOverPowerUp : PowerUpsScriptable
         target.GetComponentInChildren<SpriteRenderer>().sprite = GojoSkin;
     }
 
-    //Activates the special power.
-    public override void SpecialPower(GameObject target)
+    public override void ActivatePower(GameObject target)
     {
-        
+        PetrManager cp = target.gameObject.GetComponent<PetrManager>();
+        cp.StartGojo();
     }
 }

@@ -35,6 +35,15 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShootWebs"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3fb4261-6a42-4fc1-8bc5-eac56b4680cc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -73,12 +82,12 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""02942b37-a704-4c47-a5fd-e9eaa34b625c"",
+                    ""id"": ""12efc44b-a3fd-41bf-920e-621d32b3f1c9"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""ShootWebs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -90,6 +99,7 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
         // Petr
         m_Petr = asset.FindActionMap("Petr", throwIfNotFound: true);
         m_Petr_Jump = m_Petr.FindAction("Jump", throwIfNotFound: true);
+        m_Petr_ShootWebs = m_Petr.FindAction("ShootWebs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -152,11 +162,13 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Petr;
     private List<IPetrActions> m_PetrActionsCallbackInterfaces = new List<IPetrActions>();
     private readonly InputAction m_Petr_Jump;
+    private readonly InputAction m_Petr_ShootWebs;
     public struct PetrActions
     {
         private @PetrControllers m_Wrapper;
         public PetrActions(@PetrControllers wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Petr_Jump;
+        public InputAction @ShootWebs => m_Wrapper.m_Petr_ShootWebs;
         public InputActionMap Get() { return m_Wrapper.m_Petr; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -169,6 +181,9 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @ShootWebs.started += instance.OnShootWebs;
+            @ShootWebs.performed += instance.OnShootWebs;
+            @ShootWebs.canceled += instance.OnShootWebs;
         }
 
         private void UnregisterCallbacks(IPetrActions instance)
@@ -176,6 +191,9 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @ShootWebs.started -= instance.OnShootWebs;
+            @ShootWebs.performed -= instance.OnShootWebs;
+            @ShootWebs.canceled -= instance.OnShootWebs;
         }
 
         public void RemoveCallbacks(IPetrActions instance)
@@ -196,5 +214,6 @@ public partial class @PetrControllers: IInputActionCollection2, IDisposable
     public interface IPetrActions
     {
         void OnJump(InputAction.CallbackContext context);
+        void OnShootWebs(InputAction.CallbackContext context);
     }
 }

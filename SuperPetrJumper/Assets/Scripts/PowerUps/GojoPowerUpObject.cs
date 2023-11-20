@@ -20,6 +20,7 @@ public class TestingPowerUp : MonoBehaviour
         {
             Destroy(gameObject);
             test.ChangeSkins(collision.gameObject);
+            test.ActivatePower(collision.gameObject);
         }
     }
 }

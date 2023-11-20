@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShootWebs",
+                    "type": "Button",
+                    "id": "e3fb4261-6a42-4fc1-8bc5-eac56b4680cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -51,12 +60,12 @@
                 },
                 {
                     "name": "",
-                    "id": "02942b37-a704-4c47-a5fd-e9eaa34b625c",
+                    "id": "12efc44b-a3fd-41bf-920e-621d32b3f1c9",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "ShootWebs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
