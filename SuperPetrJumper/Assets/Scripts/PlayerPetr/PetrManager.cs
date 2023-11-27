@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PetrManager : MonoBehaviour
 {
-    [SerializeField] private Transform tr;
     [SerializeField] private Sprite defaultSkin;
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private float duration;
@@ -30,7 +29,7 @@ public class PetrManager : MonoBehaviour
         //player has the spiderman power-up.
         if (spiderPowerUp)
         {
-            GameObject web = Instantiate(SpiderWebs, tr.position, Quaternion.identity);
+            GameObject web = Instantiate(SpiderWebs, transform.position, Quaternion.identity);
             Destroy(web, duration);
         }
     }
