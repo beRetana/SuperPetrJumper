@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638366553310000000
+      ticks: 638367221820000000
     m_Hash: 537872238
   m_LockFileStatus:
     m_FilePath: /Users/ymq-joy/Documents/GitHub/SuperPetrJumper/SuperPetrJumper/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638366553310000000
+      ticks: 638367221820000000
     m_Hash: 1149633662
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -4291,8 +4291,10 @@ m_ResolvedPackages:
     - 1.0.0-pre.4
     - 1.0.0
     - 1.0.1
+    - 1.1.0
     compatible:
     - 1.0.1
+    - 1.1.0
     recommended: 1.0.1
     deprecated: []
   dependencies:
