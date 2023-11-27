@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Petr
-  - PowerUps
   layers:
   - Default
   - TransparentFX
