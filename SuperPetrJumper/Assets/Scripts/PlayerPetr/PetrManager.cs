@@ -85,4 +85,27 @@ public class PetrManager : MonoBehaviour
         animator.SetBool("Gojo", true);
         Invoke(nameof(DefaultSettings), duration);
     }
+
+    public void StartPowerUp(string powerUp)
+    {
+        DefaultSettings();
+
+        switch (powerUp)
+        {
+            case "Gojo":
+                gojoPowerUp = true;
+                break;
+
+            case "Sonic":
+                Time.timeScale = sonicSpeed;
+                break;
+
+            default:
+                spiderPowerUp = true;
+                break;
+        }
+
+        animator.SetBool(powerUp, true);
+        Invoke(nameof(DefaultSettings), duration);
+    }
 }
