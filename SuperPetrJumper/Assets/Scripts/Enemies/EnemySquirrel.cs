@@ -5,19 +5,26 @@ using UnityEngine;
 
 public class EnemySquirrel : MonoBehaviour
 {
-    public float squirrelSpeed = 1f;
-    Rigidbody2D rbs;
+    [SerializeField] private float speed, moveLeft, moveDown;
     // Start is called before the first frame update
     void Update()
     {
-        var squirrelDirection = (Vector3.left + Vector3.down).normalized;
-        rbs.velocity = squirrelDirection * squirrelSpeed;
+        var squirrelDirection = ((Vector3.left * moveLeft) + (Vector3.down * moveDown)).normalized;
+        transform.position += squirrelDirection * speed * Time.deltaTime;
     }
 
     // Update is called once per frame
     [System.Obsolete]
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Petr"))
+        {
+            Time.timeScale = 1;
+            collision.gameObject.GetComponent<PetrManager>().Dead();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

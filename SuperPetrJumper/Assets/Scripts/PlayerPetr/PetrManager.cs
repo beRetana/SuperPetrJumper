@@ -15,6 +15,11 @@ public class PetrManager : MonoBehaviour
     [SerializeField] private float defaultSpeed;
     private bool spiderPowerUp, sonicPowerUp, gojoPowerUp;
 
+    public void Dead()
+    {
+        GameStateManager.GameOver();
+    }
+
     private void Awake()
     {
         //Initialize and enable the input system for Player.

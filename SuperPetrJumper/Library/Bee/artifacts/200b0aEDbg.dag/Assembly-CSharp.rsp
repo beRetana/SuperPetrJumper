@@ -384,6 +384,7 @@
 "Assets/Scripts/Enemies/EnemySquirrelSpawner.cs"
 "Assets/Scripts/Enemies/PetrEnemies.cs"
 "Assets/Scripts/Enemies/PetrEnemiesSpawner.cs"
+"Assets/Scripts/GameStateManager.cs"
 "Assets/Scripts/menu.cs"
 "Assets/Scripts/PlayerPetr/PetrControllers.cs"
 "Assets/Scripts/PlayerPetr/PetrJumping.cs"

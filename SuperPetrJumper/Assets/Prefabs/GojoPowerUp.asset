@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e830bb3a110e54ba1b44ac4123a5619e, type: 3}
-  m_Name: TestingPowerUpGojo
+  m_Name: GojoPowerUp
   m_EditorClassIdentifier: 
-  GojoSkin: {fileID: 3286163911610860551, guid: 29f877ba2000f4b17a190dbd6a55bb32, type: 3}
+  GojoSkin: {fileID: 21300000, guid: 92df9d91ac7954d2db736606f32933a1, type: 3}
