@@ -9,6 +9,7 @@ public class PetrJumping : MonoBehaviour
     [SerializeField] private float jumpForce;
     private PetrControllers playerControls;
     private int doubleJump;
+    [SerializeField] private Animator petrAnimations;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class PetrJumping : MonoBehaviour
         //Jump only twice increase by one the times Player jumps.
         if (context.performed && doubleJump < 2)
         {
+            petrAnimations.SetBool("Jumping", true);
             rbPlayer.AddForce(Vector2.up * jumpForce);
             doubleJump++;
         }
@@ -34,6 +36,7 @@ public class PetrJumping : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             doubleJump = 0;
+            petrAnimations.SetBool("Jumping", false);
         }
     }
 }
