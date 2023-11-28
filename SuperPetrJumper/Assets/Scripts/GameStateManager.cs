@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 public class GameStateManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameStateManager Game;
+
+    private void Awake()
     {
-        
+        if(Game != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Game = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void GameOver()
     {
-        
+        SceneManager.LoadScene("Menu");
     }
 }

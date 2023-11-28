@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907e94dd40dcf4ecba2a719def6df61d, type: 3}
   m_Name: SpidermanPowerUP
   m_EditorClassIdentifier: 
-  Skin: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  Skin: {fileID: 21300000, guid: d507b3a8319d94586982049db42df7b5, type: 3}

@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class EnemySquirrel : MonoBehaviour
 {
-    [SerializeField] private float moveLeft, moveDown;
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float speed, moveLeft, moveDown;
     // Start is called before the first frame update
     void Update()
     {
         var squirrelDirection = ((Vector3.left * moveLeft) + (Vector3.down * moveDown)).normalized;
-        rb.AddForce(squirrelDirection);
+        transform.position += squirrelDirection * speed * Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -20,7 +19,8 @@ public class EnemySquirrel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Petr"))
         {
-            //collision.gameObject.GetComponent<PetrManager>().Dead();
+            Time.timeScale = 1;
+            collision.gameObject.GetComponent<PetrManager>().Dead();
         }
         else
         {
