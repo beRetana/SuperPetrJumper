@@ -11,6 +11,7 @@ public class PetrManager : MonoBehaviour
     [SerializeField] private float duration;
     [SerializeField] private GameObject SpiderWebs;
     [SerializeField] private float sonicSpeed, sonicSpeedDuration;
+    [SerializeField] private Animator animator;
     private PetrControllers playerControls;
     [SerializeField] private float defaultSpeed;
     private bool spiderPowerUp, sonicPowerUp, gojoPowerUp;
@@ -42,62 +43,46 @@ public class PetrManager : MonoBehaviour
         }
     }
 
-    private void DefaultSkin()
+    private void DefaultSettings()
     {
-        //Turns the player's skin into the default.
-        sprite.sprite = defaultSkin;
-        gojoPowerUp = false;
-    }
+        //Turns the player's settings into the default.
 
-    private void DefaultSpider()
-    {
-        //Turns the spiderman power-up off.
-        spiderPowerUp = false;
-    }
-
-    private void DefaultSpeed()
-    {
-        //It turns the time speed of the game to default.
+        animator.SetBool("Gojo", false);
+        animator.SetBool("Sonic", false);
+        animator.SetBool("SpiderMan", false);
         Time.timeScale = defaultSpeed;
+        gojoPowerUp = false;
+        spiderPowerUp = false;
     }
 
     public void StartSpider()
     {
-        //If the sonic power up is on the turn it off by
-        //setting time seed back to normal.
-        if (sonicPowerUp)
-        {
-            DefaultSpeed();
-        }
+        DefaultSettings();
 
         //Sets duration of the powers to "duration."
         spiderPowerUp = true;
-        Invoke(nameof(DefaultSpider), duration);
-        Invoke(nameof(DefaultSkin), duration);
+
+        animator.SetBool("SpiderMan", true);
+        Invoke(nameof(DefaultSettings), duration);
     }
 
     public void StartSonic()
     {
         //Sets time speed faster and sets duration for the power up.
+        DefaultSettings();
         Time.timeScale = sonicSpeed;
-        spiderPowerUp = false;
-        Invoke(nameof(DefaultSkin), sonicSpeedDuration);
-        Invoke(nameof(DefaultSpeed), sonicSpeedDuration);
+        animator.SetBool("Sonic", true);
+        Invoke(nameof(DefaultSettings), sonicSpeedDuration);
     }
 
     public void StartGojo()
     {
+        DefaultSettings();
+
         //Sets duration for the skin to change back to normal.
         //Power up effects need to be done.
-        spiderPowerUp = false;
         gojoPowerUp = true;
-        //If the sonic power up is on the turn it off by
-        //setting time seed back to normal.
-        if (sonicPowerUp)
-        {
-            DefaultSpeed();
-        }
-        Invoke(nameof(DefaultSkin), duration);
-
+        animator.SetBool("Gojo", true);
+        Invoke(nameof(DefaultSettings), duration);
     }
 }
