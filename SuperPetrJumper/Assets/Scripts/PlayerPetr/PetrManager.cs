@@ -17,7 +17,10 @@ public class PetrManager : MonoBehaviour
 
     public void Dead()
     {
-        GameStateManager.GameOver();
+        if (!gojoPowerUp)
+        {
+            GameStateManager.GameOver();
+        }
     }
 
     private void Awake()
@@ -43,6 +46,7 @@ public class PetrManager : MonoBehaviour
     {
         //Turns the player's skin into the default.
         sprite.sprite = defaultSkin;
+        gojoPowerUp = false;
     }
 
     private void DefaultSpider()
@@ -86,7 +90,7 @@ public class PetrManager : MonoBehaviour
         //Sets duration for the skin to change back to normal.
         //Power up effects need to be done.
         spiderPowerUp = false;
-
+        gojoPowerUp = true;
         //If the sonic power up is on the turn it off by
         //setting time seed back to normal.
         if (sonicPowerUp)

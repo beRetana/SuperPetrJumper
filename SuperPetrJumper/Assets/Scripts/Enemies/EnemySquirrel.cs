@@ -22,9 +22,6 @@ public class EnemySquirrel : MonoBehaviour
             Time.timeScale = 1;
             collision.gameObject.GetComponent<PetrManager>().Dead();
         }
-        else
-        {
             Destroy(gameObject);
-        }
     }
 }
