@@ -11,6 +11,7 @@ public class PetrManager : MonoBehaviour
     [SerializeField] private Animator animator;
     private PetrControllers playerControls;
     private bool spiderPowerUp, sonicPowerUp, gojoPowerUp;
+    private float score;
 
     public void Dead()
     {
@@ -18,6 +19,11 @@ public class PetrManager : MonoBehaviour
         {
             GameStateManager.GameOver();
         }
+    }
+
+    public void Coins()
+    {
+        score += 10;
     }
 
     private void Awake()
