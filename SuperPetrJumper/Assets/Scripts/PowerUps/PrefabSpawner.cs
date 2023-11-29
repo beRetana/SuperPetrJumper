@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PrefabSpawner : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> powerUps;
+    [SerializeField] private List<GameObject> prefabs;
     [SerializeField] private float delayStartTime;
     [SerializeField] private float intervalTime;
 
@@ -19,7 +19,7 @@ public class PrefabSpawner : MonoBehaviour
     //then initialize it.
     private void SpawnPrefab()
     {
-        int random = Random.Range(0, powerUps.Count);
-        Instantiate(powerUps[random]);
+        int random = Random.Range(0, prefabs.Count);
+        Instantiate(prefabs[random]);
     }
 }

@@ -14,7 +14,6 @@ public class EnemyRock : PetrEnemies
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Attack(collision.gameObject);
-        Debug.Log("HitRock");
     }
 
     public override void Attack(GameObject target)
@@ -23,8 +22,8 @@ public class EnemyRock : PetrEnemies
         {
             Time.timeScale = 1;
             target.GetComponent<PetrManager>().Dead();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     public override void Move()

@@ -7,9 +7,10 @@ public class Despawner : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Destroys any object that has the tag "PowerUps"
-        if (collision.gameObject.CompareTag("PowerUps"))
+        var target = collision.gameObject;
+        if (!target.CompareTag("Petr") && !target.CompareTag("Ground"))
         {
-            Destroy(collision.gameObject);
+            Destroy(target);
         }
     }
 }

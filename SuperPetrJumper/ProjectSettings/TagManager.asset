@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Petr
   - PowerUps
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

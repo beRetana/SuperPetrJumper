@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class SpiderwebController : MonoBehaviour
 {
@@ -21,11 +22,10 @@ public class SpiderwebController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Only when it collides with an object that doesn't have the tag "Petr".
-        if (!collision.gameObject.CompareTag("Petr"))
+        if (!collision.gameObject.CompareTag("Petr") && !collision.gameObject.CompareTag("CheckPoint"))
         {
             //Destroys the object it collides with and itself.
             Destroy(collision.gameObject);
-            Debug.Log("HitRock");
             Destroy(gameObject);
         }
     }

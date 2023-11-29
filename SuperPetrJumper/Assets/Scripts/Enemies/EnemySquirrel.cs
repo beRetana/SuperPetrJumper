@@ -23,8 +23,8 @@ public class EnemySquirrel : PetrEnemies
         {
             Time.timeScale = 1;
             target.GetComponent<PetrManager>().Dead();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     public override void Move()
