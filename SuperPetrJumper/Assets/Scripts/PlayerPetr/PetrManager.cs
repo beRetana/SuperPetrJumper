@@ -6,14 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PetrManager : MonoBehaviour
 {
-    [SerializeField] private Sprite defaultSkin;
-    [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private float duration;
     [SerializeField] private GameObject SpiderWebs;
-    [SerializeField] private float sonicSpeed, sonicSpeedDuration;
+    [SerializeField] private float sonicSpeed, sonicSpeedDuration, defaultSpeed, duration, spiderwebSpawn;
     [SerializeField] private Animator animator;
     private PetrControllers playerControls;
-    [SerializeField] private float defaultSpeed;
     private bool spiderPowerUp, sonicPowerUp, gojoPowerUp;
 
     public void Dead()
@@ -38,7 +34,8 @@ public class PetrManager : MonoBehaviour
         //player has the spiderman power-up.
         if (spiderPowerUp)
         {
-            GameObject web = Instantiate(SpiderWebs, transform.position, Quaternion.identity);
+            Vector3 distance = Vector3.right * spiderwebSpawn;
+            GameObject web = Instantiate(SpiderWebs, (transform.position + distance), Quaternion.identity);
             Destroy(web, duration);
         }
     }
@@ -53,37 +50,6 @@ public class PetrManager : MonoBehaviour
         Time.timeScale = defaultSpeed;
         gojoPowerUp = false;
         spiderPowerUp = false;
-    }
-
-    public void StartSpider()
-    {
-        DefaultSettings();
-
-        //Sets duration of the powers to "duration."
-        spiderPowerUp = true;
-
-        animator.SetBool("SpiderMan", true);
-        Invoke(nameof(DefaultSettings), duration);
-    }
-
-    public void StartSonic()
-    {
-        //Sets time speed faster and sets duration for the power up.
-        DefaultSettings();
-        Time.timeScale = sonicSpeed;
-        animator.SetBool("Sonic", true);
-        Invoke(nameof(DefaultSettings), sonicSpeedDuration);
-    }
-
-    public void StartGojo()
-    {
-        DefaultSettings();
-
-        //Sets duration for the skin to change back to normal.
-        //Power up effects need to be done.
-        gojoPowerUp = true;
-        animator.SetBool("Gojo", true);
-        Invoke(nameof(DefaultSettings), duration);
     }
 
     public void StartPowerUp(string powerUp)

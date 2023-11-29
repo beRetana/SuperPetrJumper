@@ -25,6 +25,7 @@ public class SpiderwebController : MonoBehaviour
         {
             //Destroys the object it collides with and itself.
             Destroy(collision.gameObject);
+            Debug.Log("HitRock");
             Destroy(gameObject);
         }
     }
