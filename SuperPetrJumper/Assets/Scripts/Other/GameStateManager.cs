@@ -7,18 +7,18 @@ using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static GameStateManager Game;
+    public static GameStateManager game;
     public static float highestScore;
 
     private void Awake()
     {
-        if(Game != null)
+        if(game != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            Game = this;
+            game = this;
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -30,5 +30,6 @@ public class GameStateManager : MonoBehaviour
             highestScore = score;
         }
         SceneManager.LoadScene("Menu");
+        MusicManager.Music.MusicSource.Stop();
     }
 }

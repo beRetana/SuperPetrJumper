@@ -26,6 +26,7 @@ public class PetrJumping : MonoBehaviour
         {
             petrAnimations.SetBool("Jumping", true);
             rbPlayer.AddForce(Vector2.up * jumpForce);
+            MusicManager.Music.PlaySFX("Jump");
             doubleJump++;
         }
     }

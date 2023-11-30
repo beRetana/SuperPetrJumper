@@ -5,14 +5,14 @@ using UnityEngine;
 public class PrefabSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> prefabs;
-    [SerializeField] private float delayStartTime;
-    [SerializeField] private float intervalTime;
+    [SerializeField] private float minDelayStartTime, delayStartTime, minIntervalTime, intervalTime;
 
     //Call the function SpawnPowerUp() delayStartTime after the game
     //starts and on interval of intervalTime in seconds.
     private void Start()
     {
-        InvokeRepeating("SpawnPrefab", delayStartTime, intervalTime);
+        InvokeRepeating("SpawnPrefab", Random.Range(minDelayStartTime, delayStartTime),
+                                       Random.Range(minIntervalTime, intervalTime));
     }
 
     //Get a random number in range of zero and the length of the list

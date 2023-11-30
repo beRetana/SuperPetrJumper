@@ -20,8 +20,14 @@ public class PetrManager : MonoBehaviour
     {
         if (!gojoPowerUp)
         {
-            GameStateManager.GameOver(score+coinScore);
+            MusicManager.Music.PlaySFX("PetrDied");
+            Invoke(nameof(DelayedDeath), .5f);
         }
+    }
+
+    private void DelayedDeath()
+    {
+        GameStateManager.GameOver(score + coinScore);
     }
 
     private void Start()
@@ -38,6 +44,7 @@ public class PetrManager : MonoBehaviour
     public void Coins()
     {
         coinScore += scoreIncrease;
+        MusicManager.Music.PlaySFX("PickedCoin");
         scoreDisplay.text = $"<b>{score + coinScore}</b>";
     }
 
@@ -64,13 +71,17 @@ public class PetrManager : MonoBehaviour
     private void DefaultSettings()
     {
         //Turns the player's settings into the default.
-
         animator.SetBool("Gojo", false);
         animator.SetBool("Sonic", false);
         animator.SetBool("SpiderMan", false);
         Time.timeScale = defaultSpeed;
         gojoPowerUp = false;
         spiderPowerUp = false;
+    }
+
+    private void PowerDown()
+    {
+        MusicManager.Music.PlaySFX("PowerDown");
     }
 
     public void StartPowerUp(string powerUp)
@@ -93,6 +104,8 @@ public class PetrManager : MonoBehaviour
         }
 
         animator.SetBool(powerUp, true);
+        MusicManager.Music.PlaySFX("PowerUp");
+        Invoke(nameof(PowerDown), duration);
         Invoke(nameof(DefaultSettings), duration);
     }
 }
