@@ -392,7 +392,6 @@
 "Assets/Scripts/Other/menu.cs"
 "Assets/Scripts/Other/PauseMenu.cs"
 "Assets/Scripts/Other/PrefabSpawner.cs"
-"Assets/Scripts/Other/ZotCoins.cs"
 "Assets/Scripts/PlayerPetr/PetrControllers.cs"
 "Assets/Scripts/PlayerPetr/PetrJumping.cs"
 "Assets/Scripts/PlayerPetr/PetrManager.cs"
@@ -400,6 +399,7 @@
 "Assets/Scripts/PowerUps/PowerUpObject.cs"
 "Assets/Scripts/PowerUps/PowerUpsScriptable.cs"
 "Assets/Scripts/PowerUps/SpiderwebController.cs"
+"Assets/Scripts/PowerUps/ZotCoins.cs"
 -langversion:9.0
 
 /deterministic

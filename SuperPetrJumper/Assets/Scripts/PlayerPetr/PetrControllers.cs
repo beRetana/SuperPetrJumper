@@ -8,7 +8,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-//PLEASE DO NOT TOUCH THIS CODE!!!
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

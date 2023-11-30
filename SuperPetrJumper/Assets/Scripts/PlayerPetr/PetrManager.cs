@@ -3,27 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PetrManager : MonoBehaviour
 {
     [SerializeField] private GameObject SpiderWebs;
-    [SerializeField] private float sonicSpeed, sonicSpeedDuration, defaultSpeed, duration, spiderwebSpawn;
+    [SerializeField] private TextMeshProUGUI scoreDisplay, highScoreDisplay;
+    [SerializeField] private float sonicSpeed, sonicSpeedDuration, defaultSpeed, duration, spiderwebSpawn, scoreIncrease;
     [SerializeField] private Animator animator;
     private PetrControllers playerControls;
     private bool spiderPowerUp, sonicPowerUp, gojoPowerUp;
-    private float score;
+    private float score, coinScore;
+    public TextMeshProUGUI ScoreDisplay {get{return scoreDisplay;}}
 
     public void Dead()
     {
         if (!gojoPowerUp)
         {
-            GameStateManager.GameOver();
+            GameStateManager.GameOver(score+coinScore);
         }
+    }
+
+    private void Start()
+    {
+        highScoreDisplay.text = $"<b>{GameStateManager.highestScore}</b>";
+    }
+
+    private void Update()
+    {
+        score = Mathf.Round(Time.timeSinceLevelLoad * 10);
+        scoreDisplay.text = $"<b>{score + coinScore}</b>";
     }
 
     public void Coins()
     {
-        score += 10;
+        coinScore += scoreIncrease;
+        scoreDisplay.text = $"<b>{score + coinScore}</b>";
     }
 
     private void Awake()

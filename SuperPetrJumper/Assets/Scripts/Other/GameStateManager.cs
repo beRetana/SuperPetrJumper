@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Game;
+    public static float highestScore;
 
     private void Awake()
     {
@@ -21,8 +23,12 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public static void GameOver()
+    public static void GameOver(float score)
     {
+        if (score > highestScore)
+        {
+            highestScore = score;
+        }
         SceneManager.LoadScene("Menu");
     }
 }
