@@ -8,7 +8,9 @@ public class Despawner : MonoBehaviour
     {
         //Destroys any object that has the tag "PowerUps"
         var target = collision.gameObject;
-        if (!target.CompareTag("Petr") && !target.CompareTag("Ground"))
+        if (!target.CompareTag("Petr") &&
+            !target.CompareTag("Don'tDestroy") &&
+            !target.CompareTag("Ground"))
         {
             Destroy(target);
         }

@@ -7,21 +7,25 @@ using TMPro;
 
 public class PetrManager : MonoBehaviour
 {
-    [SerializeField] private GameObject SpiderWebs;
     [SerializeField] private TextMeshProUGUI scoreDisplay, highScoreDisplay;
-    [SerializeField] private float sonicSpeed, sonicSpeedDuration, defaultSpeed, duration, spiderwebSpawn, scoreIncrease;
     [SerializeField] private Animator animator;
+    [SerializeField] private float sonicSpeed, sonicSpeedDuration, duration, scoreIncrease, delayedDead;
     private PetrControllers playerControls;
-    private bool spiderPowerUp, sonicPowerUp, gojoPowerUp;
-    private float score, coinScore;
+    private bool spiderPowerUp, sonicPowerUp, gojoPowerUp, dead;
+    private float score, coinScore, defaultSpeed;
     public TextMeshProUGUI ScoreDisplay {get{return scoreDisplay;}}
+    public bool Death { get { return dead; } }
+    public bool SpiderPowerUp { get { return spiderPowerUp; } }
 
     public void Dead()
     {
         if (!gojoPowerUp)
         {
             MusicManager.Music.PlaySFX("PetrDied");
-            Invoke(nameof(DelayedDeath), .5f);
+            dead = true;
+            DefaultSettings();
+            animator.SetBool("Dead", true);
+            Invoke(nameof(DelayedDeath), delayedDead);
         }
     }
 
@@ -33,6 +37,7 @@ public class PetrManager : MonoBehaviour
     private void Start()
     {
         highScoreDisplay.text = $"<b>{GameStateManager.highestScore}</b>";
+        defaultSpeed = Time.timeScale;
     }
 
     private void Update()
@@ -46,26 +51,6 @@ public class PetrManager : MonoBehaviour
         coinScore += scoreIncrease;
         MusicManager.Music.PlaySFX("PickedCoin");
         scoreDisplay.text = $"<b>{score + coinScore}</b>";
-    }
-
-    private void Awake()
-    {
-        //Initialize and enable the input system for Player.
-        playerControls = new PetrControllers();
-        playerControls.Petr.Enable();
-        playerControls.Petr.ShootWebs.performed += ShootWebs;
-    }
-
-    private void ShootWebs(InputAction.CallbackContext context)
-    {
-        //Only initializes a SpiderWeb projectile when the
-        //player has the spiderman power-up.
-        if (spiderPowerUp)
-        {
-            Vector3 distance = Vector3.right * spiderwebSpawn;
-            GameObject web = Instantiate(SpiderWebs, (transform.position + distance), Quaternion.identity);
-            Destroy(web, duration);
-        }
     }
 
     private void DefaultSettings()
@@ -88,19 +73,21 @@ public class PetrManager : MonoBehaviour
     {
         DefaultSettings();
 
-        switch (powerUp)
-        {
-            case "Gojo":
-                gojoPowerUp = true;
-                break;
+        if (!dead) {
+            switch (powerUp)
+            {
+                case "Gojo":
+                    gojoPowerUp = true;
+                    break;
 
-            case "Sonic":
-                Time.timeScale = sonicSpeed;
-                break;
+                case "Sonic":
+                    Time.timeScale *= sonicSpeed;
+                    break;
 
-            default:
-                spiderPowerUp = true;
-                break;
+                default:
+                    spiderPowerUp = true;
+                    break;
+            }
         }
 
         animator.SetBool(powerUp, true);

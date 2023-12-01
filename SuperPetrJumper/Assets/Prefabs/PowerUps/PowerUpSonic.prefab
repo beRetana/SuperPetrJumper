@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9096447773258106326}
   m_Layer: 0
   m_Name: PowerUpSonic
-  m_TagString: PowerUps
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

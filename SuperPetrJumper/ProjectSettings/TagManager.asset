@@ -9,6 +9,8 @@ TagManager:
   - PowerUps
   - CheckPoint
   - PauseMenu
+  - Don'tDestroy
+  - Collectable
   layers:
   - Default
   - TransparentFX

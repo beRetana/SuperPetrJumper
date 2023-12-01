@@ -8,6 +8,7 @@ public class PetrJumping : MonoBehaviour
     [SerializeField] private Rigidbody2D rbPlayer;
     [SerializeField] private float jumpForce;
     private PetrControllers playerControls;
+    [SerializeField] private PetrManager petrManager;
     private int doubleJump;
     [SerializeField] private Animator petrAnimations;
 
@@ -22,7 +23,7 @@ public class PetrJumping : MonoBehaviour
     private void Jump(InputAction.CallbackContext context)
     {
         //Jump only twice increase by one the times Player jumps.
-        if (context.performed && doubleJump < 2)
+        if (context.performed && doubleJump < 2 && !petrManager.Death)
         {
             petrAnimations.SetBool("Jumping", true);
             rbPlayer.AddForce(Vector2.up * jumpForce);
