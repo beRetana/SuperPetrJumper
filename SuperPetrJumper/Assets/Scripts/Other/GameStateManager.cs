@@ -12,7 +12,8 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
-        if(game != null)
+
+        if (game != null)
         {
             Destroy(gameObject);
         }
@@ -29,6 +30,16 @@ public class GameStateManager : MonoBehaviour
         {
             highestScore = score;
         }
+        PlayerPrefs.SetFloat("HighScore", highestScore);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Menu");
+        MusicManager.Music.MusicSource.Stop();
+    }
+
+    public static void GameOver()
+    {
+        PlayerPrefs.SetFloat("HighScore", highestScore);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Menu");
         MusicManager.Music.MusicSource.Stop();
     }

@@ -7,13 +7,15 @@ public class menu : MonoBehaviour
 {
     public string scenename;
 
-    public void PlayGame()
+    private void PlayGame()
     {
         SceneManager.LoadScene(scenename);
+        Time.timeScale = 1;
     }
 
-    public void QuitGame()
+    private void QuitGame()
     {
+        PlayerPrefs.Save();
         Application.Quit();
     }
 }

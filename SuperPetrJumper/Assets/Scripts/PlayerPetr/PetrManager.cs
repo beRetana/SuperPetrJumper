@@ -36,7 +36,7 @@ public class PetrManager : MonoBehaviour
 
     private void Start()
     {
-        highScoreDisplay.text = $"<b>{GameStateManager.highestScore}</b>";
+        highScoreDisplay.text = $"<b>{PlayerPrefs.GetFloat("HighScore")}</b>";
         defaultSpeed = Time.timeScale;
     }
 

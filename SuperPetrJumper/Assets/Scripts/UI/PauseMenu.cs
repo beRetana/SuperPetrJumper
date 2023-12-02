@@ -12,6 +12,17 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void ReturnToMain()
+    {
+        GameStateManager.GameOver();
+    }
+
+    private void QuitGame()
+    {
+        PlayerPrefs.Save();
+        Application.Quit();
+    }
+
     private void OpenPauseMenu()
     {
 
