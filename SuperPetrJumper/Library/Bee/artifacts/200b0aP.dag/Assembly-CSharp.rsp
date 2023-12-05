@@ -339,6 +339,7 @@
 "Assets/Scripts/PlayerPetr/PetrControllers.cs"
 "Assets/Scripts/PlayerPetr/PetrJumping.cs"
 "Assets/Scripts/PlayerPetr/PetrManager.cs"
+"Assets/Scripts/PlayerPetr/PetrScore.cs"
 "Assets/Scripts/PlayerPetr/PetrWebShooter.cs"
 "Assets/Scripts/PowerUps/PowerUp.cs"
 "Assets/Scripts/PowerUps/PowerUpObject.cs"
@@ -348,6 +349,7 @@
 "Assets/Scripts/UI/InformationMenu.cs"
 "Assets/Scripts/UI/InitialMenu.cs"
 "Assets/Scripts/UI/PauseMenu.cs"
+"Assets/Scripts/UI/PetrHasDied.cs"
 -langversion:9.0
 
 /deterministic

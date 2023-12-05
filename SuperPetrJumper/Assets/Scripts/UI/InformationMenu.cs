@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class InformationMenu : MonoBehaviour
 {
+    //Set the information menu invisible at start.
     private void Start()
     {
         gameObject.SetActive(false);
     }
 
-    public void OpenWindow()
+    //Set the information menu visible.
+    private void OpenWindow()
     {
         gameObject.SetActive(true);
     }
 
-    public void CloseWindow()
+    //Set the information menu invisible.
+    private void CloseWindow()
     {
         gameObject.SetActive(false);
     }

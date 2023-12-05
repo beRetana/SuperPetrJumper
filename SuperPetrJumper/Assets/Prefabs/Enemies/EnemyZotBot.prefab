@@ -183,3 +183,5 @@ MonoBehaviour:
   speed: 5
   stopTime: 9
   delayAttack: 3
+  counter: 3
+  increaseSpeed: 2

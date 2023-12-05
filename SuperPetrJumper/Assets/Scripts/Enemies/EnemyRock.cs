@@ -16,16 +16,17 @@ public class EnemyRock : PetrEnemies
         Attack(collision.gameObject);
     }
 
+    //If it hits the player then it destroys the enemy and ends the game.
     public override void Attack(GameObject target)
     {
         if (target.CompareTag("Petr"))
         {
-            Time.timeScale = 1;
             target.GetComponent<PetrManager>().Dead();
             Destroy(gameObject);
         }
     }
 
+    //Makes the enemy move to the left.
     public override void Move()
     {
         Vector3 movement = Vector3.left * speed;

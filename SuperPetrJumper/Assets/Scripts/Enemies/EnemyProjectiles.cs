@@ -12,11 +12,14 @@ public class Projectiles : MonoBehaviour
 
     private void Update()
     {
+        //Adds upwards force to the projectile once right after it has been instantiated.
         if (!started)
         {
             distance = Vector2.up * upForce;
             started = true;
         }
+
+        //Makes the projectile move to the left and down in a angular trajectory.
         distance.x += speed * Time.deltaTime;
         distance.y += gravity * Time.deltaTime;
         transform.position += distance * Time.deltaTime;
@@ -26,9 +29,9 @@ public class Projectiles : MonoBehaviour
     {
         var target = collision.gameObject;
 
+        //If it hits the player then it destroys the projectile and ends the game.
         if (target.CompareTag("Petr"))
         {
-            Time.timeScale = 1;
             Destroy(gameObject);
             target.GetComponent<PetrManager>().Dead();
         }

@@ -12,14 +12,15 @@ public class PetrJumping : MonoBehaviour
     private int doubleJump;
     [SerializeField] private Animator petrAnimations;
 
+    //Initialize and enable the input system for Player.
     private void Awake()
     {
-        //Initialize and enable the input system for Player.
         playerControls = new PetrControllers();
         playerControls.Petr.Enable();
         playerControls.Petr.Jump.performed += Jump;
     }
 
+    //Gets called when the user inputs data though the input system created.
     private void Jump(InputAction.CallbackContext context)
     {
         //Jump only twice increase by one the times Player jumps.

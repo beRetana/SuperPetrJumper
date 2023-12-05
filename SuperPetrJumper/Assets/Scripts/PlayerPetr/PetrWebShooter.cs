@@ -10,9 +10,9 @@ public class PetrWebShooter : MonoBehaviour
     [SerializeField] private float spiderwebSpawn, webDuration;
     [SerializeField] private GameObject spiderWebs;
 
+    //Initialize and enable the input system for Player to shoot.
     private void Awake()
     {
-        //Initialize and enable the input system for Player.
         playerControls = new PetrControllers();
         playerControls.Petr.Enable();
         playerControls.Petr.ShootWebs.performed += ShootWebs;
@@ -20,8 +20,8 @@ public class PetrWebShooter : MonoBehaviour
 
     private void ShootWebs(InputAction.CallbackContext context)
     {
-        //Only initializes a SpiderWeb projectile when the
-        //player has the spiderman power-up.
+        /*Only initializes a SpiderWeb projectile when the
+        player has the spiderman power-up and its not dead.*/
         if (petrManager.SpiderPowerUp && !petrManager.Death)
         {
             Vector3 distance = Vector3.right * spiderwebSpawn;

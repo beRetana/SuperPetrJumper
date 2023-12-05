@@ -7,55 +7,40 @@ using TMPro;
 
 public class PetrManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI scoreDisplay, highScoreDisplay;
+    [SerializeField] private PetrScore score;
     [SerializeField] private Animator animator;
-    [SerializeField] private float sonicSpeed, sonicSpeedDuration, duration, scoreIncrease, delayedDead;
+    [SerializeField] private PetrHasDied deadMenu;
+    [SerializeField] private float sonicSpeed, sonicSpeedDuration, duration;
     private PetrControllers playerControls;
     private bool spiderPowerUp, sonicPowerUp, gojoPowerUp, dead;
-    private float score, coinScore, defaultSpeed;
-    public TextMeshProUGUI ScoreDisplay {get{return scoreDisplay;}}
+    private float defaultSpeed;
     public bool Death { get { return dead; } }
     public bool SpiderPowerUp { get { return spiderPowerUp; } }
 
+    //Gets called when an enenmy touches the player
     public void Dead()
     {
+        //Only when the player doesn't have the Gojo power-up.
         if (!gojoPowerUp)
         {
             MusicManager.Music.PlaySFX("PetrDied");
             dead = true;
             DefaultSettings();
             animator.SetBool("Dead", true);
-            Invoke(nameof(DelayedDeath), delayedDead);
+            deadMenu.PetrCaptured();
+            GameStateManager.GameScore(score.GetScore());
         }
     }
 
-    private void DelayedDeath()
-    {
-        GameStateManager.GameOver(score + coinScore);
-    }
-
+    //Records the initial default speed of the game.
     private void Start()
     {
-        highScoreDisplay.text = $"<b>{PlayerPrefs.GetFloat("HighScore")}</b>";
         defaultSpeed = Time.timeScale;
     }
 
-    private void Update()
-    {
-        score = Mathf.Round(Time.timeSinceLevelLoad * 10);
-        scoreDisplay.text = $"<b>{score + coinScore}</b>";
-    }
-
-    public void Coins()
-    {
-        coinScore += scoreIncrease;
-        MusicManager.Music.PlaySFX("PickedCoin");
-        scoreDisplay.text = $"<b>{score + coinScore}</b>";
-    }
-
+    //Turns the player's settings into the default.
     private void DefaultSettings()
     {
-        //Turns the player's settings into the default.
         animator.SetBool("Gojo", false);
         animator.SetBool("Sonic", false);
         animator.SetBool("SpiderMan", false);
@@ -64,11 +49,13 @@ public class PetrManager : MonoBehaviour
         spiderPowerUp = false;
     }
 
+    //Plays the power-down sound effect.
     private void PowerDown()
     {
         MusicManager.Music.PlaySFX("PowerDown");
     }
 
+    //Activates the specific power-up sent as an argument.
     public void StartPowerUp(string powerUp)
     {
         DefaultSettings();
@@ -92,6 +79,7 @@ public class PetrManager : MonoBehaviour
 
         animator.SetBool(powerUp, true);
         MusicManager.Music.PlaySFX("PowerUp");
+        //Adds dealy to effects. I was taught how to do coroutines.
         Invoke(nameof(PowerDown), duration);
         Invoke(nameof(DefaultSettings), duration);
     }

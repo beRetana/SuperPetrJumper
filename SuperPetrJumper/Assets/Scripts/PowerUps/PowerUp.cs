@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Wanted to learn how to use scriptable objects even though I think
+  that using an abstract class would have been more efficient*/
+
 [CreateAssetMenu (menuName = "PowerUpsScriptable/PowerUp")]
 
 public class PowerUp : PowerUpsScriptable
@@ -12,7 +15,7 @@ public class PowerUp : PowerUpsScriptable
         target.GetComponentInChildren<SpriteRenderer>().sprite = skin;
     }
 
-    //Activates the Gojo power-up for player.
+    //Activates the power-up for player.
     public override void ActivatePower(GameObject target, string powerUp)
     {
         target.gameObject.GetComponent<PetrManager>().StartPowerUp(powerUp);

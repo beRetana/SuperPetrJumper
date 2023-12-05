@@ -21,7 +21,7 @@ public class SpiderwebController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Only when it collides with an object that doesn't have the tag "Petr".
+        //Only when it collides with an object that are enemies.
         if (!collision.gameObject.CompareTag("Petr") &&
             !collision.gameObject.CompareTag("Don'tDestroy") &&
             !collision.gameObject.CompareTag("Collectable") &&

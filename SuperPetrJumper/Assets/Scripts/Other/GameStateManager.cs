@@ -8,11 +8,11 @@ using TMPro;
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager game;
-    public static float highestScore;
+    public static float highestScore = PlayerPrefs.GetFloat("HighScore", 0f);
 
+    //Creates a singleton for the game.
     private void Awake()
     {
-
         if (game != null)
         {
             Destroy(gameObject);
@@ -24,23 +24,21 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public static void GameOver(float score)
+    //Stores the game score if its higher than previous highest score.
+    public static void GameScore(float score)
     {
         if (score > highestScore)
         {
             highestScore = score;
         }
-        PlayerPrefs.SetFloat("HighScore", highestScore);
-        PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
-        MusicManager.Music.MusicSource.Stop();
     }
 
+    //Saves the highest score, stops music and returns to main menu.
     public static void GameOver()
     {
         PlayerPrefs.SetFloat("HighScore", highestScore);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
         MusicManager.Music.MusicSource.Stop();
+        SceneManager.LoadScene("Menu");
     }
 }
